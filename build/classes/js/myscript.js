@@ -11,7 +11,7 @@ $(function()
         newEntry.find('input').val('');
         controlForm.find('.entry:not(:last) .btn-add')
             .removeClass('btn-add').addClass('btn-remove')
-            .removeClass('btn-primary').addClass('btn-default')
+            .removeClass('btn-success').addClass('btn-default')
             .html('<span class="glyphicon glyphicon-minus"></span>');
     }).on('click', '.btn-remove', function(e)
     {

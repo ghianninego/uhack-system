@@ -13,7 +13,8 @@
     
     <div class="navbar-collapse collapse sidebar-navbar-collapse">
     	<ul class="nav navbar-nav">
-        	<li class="hidden-xs navbar-brand">UHAC
+        	<li class="hidden-xs navbar-brand">
+        		<img src="../img/LOGO.png" alt="UHAC"/>
         	</li>
         	<li class="profile">
         		<img src="../../img/happy.png" alt="profile picture"/>

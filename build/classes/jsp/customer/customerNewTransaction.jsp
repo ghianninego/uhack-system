@@ -28,33 +28,39 @@
 				<h1>NEW TRANSACTION</h1>
 			</div>
 			<div class="inprofile">
-				<h4>Add Medicines</h4>
-				<div class="controls">
 				<form role="form" autocomplete="off">
-                    <div class="entry input-group">
-                    	<div class="col-sm-8">
-                        	<select class="form-control" name="fields[]">
-                        		<option value="">ajdad</option>
-                        		<option value="">ajdad</option>
-                        		<option value="">ajdad</option>
-                        	</select>
-                        </div>
-                        <div class="col-sm-3">
-                        	<input class="form-control col-sm-2" type="number" min="0" name="qty"/>
-                        </div>
+                    <div class="entry input-group col-xs-3">
+                        <input class="form-control" name="fields[]" type="text" placeholder="Type something" />
                     	<span class="input-group-btn">
-                            <button class="btn btn-primary btn-add" type="button">
+                            <button class="btn btn-success btn-add" type="button">
                                 <span class="glyphicon glyphicon-plus"></span>
                             </button>
                         </span>
                     </div>
-                    <div class="someButton">
-                    	<br>
-                    	<button type="submit" class="btn btn-default">Submit</button>
-                    </div>
                 </form>
-				</div>
-				
+			
+				<form>
+					<div class="form-group">
+						<label class="control-label" for="medicine">Medicine</label>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-10">
+							<select class="form-control" id="medicine" name="medicine">
+								<option value="">Biogesic</option>
+								<option value="">Ceelin</option>
+								<option value="">Neozep</option>
+							</select>
+						</div>
+						<div class="col-sm-2">
+							<input type="number" class="form-control" id="qty" name="qty" placeholder="Qty" min=0/>
+						</div>
+					</div>
+					<br>
+					<div class="form-group">
+						<br>
+						<button type="submit" class="btn btn-default">Submit</button>
+					</div>
+				</form>
 			</div>
 		</div>
 		<!-- End of Content -->
