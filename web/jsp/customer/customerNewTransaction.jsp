@@ -12,6 +12,7 @@
 		
 		<script src="../../js/jquery.js"></script>
 		<script src="../../js/bootstrap.min.js"></script>
+		<script src="../../js/myscript.js"></script>
 		
 		<title>Universal Hospital Archive Card - New Transaction</title>
 	</head>
@@ -27,6 +28,17 @@
 				<h1>NEW TRANSACTION</h1>
 			</div>
 			<div class="inprofile">
+				<form role="form" autocomplete="off">
+                    <div class="entry input-group col-xs-3">
+                        <input class="form-control" name="fields[]" type="text" placeholder="Type something" />
+                    	<span class="input-group-btn">
+                            <button class="btn btn-success btn-add" type="button">
+                                <span class="glyphicon glyphicon-plus"></span>
+                            </button>
+                        </span>
+                    </div>
+                </form>
+			
 				<form>
 					<div class="form-group">
 						<label class="control-label" for="medicine">Medicine</label>

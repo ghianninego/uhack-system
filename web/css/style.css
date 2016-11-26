@@ -175,6 +175,16 @@ a.btn.btn-default {
 	color: #2E2E2E;
 }
 
+.entry:not(:first-of-type)
+{
+    margin-top: 10px;
+}
+
+.glyphicon
+{
+    font-size: 12px;
+}
+
 /******************** Alerts ********************/
 
 .row {

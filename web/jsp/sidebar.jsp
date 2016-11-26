@@ -25,18 +25,16 @@
         	<li><a href="customerProfile.jsp">Profile</a></li>
         	<li><a href="customerTransactions.jsp">All Transactions</a></li>
         	<li><a href="customerNewTransaction.jsp">Order Medicine</a></li>
-        	<li><a href="faq.jsp">FAQ</a></li>
         <!-- } else if (user.equals("rider")) { -->
         	<li><a href="courierProfile.jsp">Profile</a></li>
         	<li><a href="courierTransactions.jsp">All Transactions</a></li>
-        	<li><a href="faq.jsp">FAQ</a></li>
         <!-- } else { -->
         	<li><a href="adminProfile.jsp">Profile</a></li>
         	<li><a href="adminTransactions.jsp">All Transactions</a></li>
         	<li><a href="adminUsers.jsp">All Users</a></li>
-        	<li><a href="faq.jsp">FAQ</a></li>
         <!-- } -->
         
+        	<li><a href="../faq.jsp">FAQ</a></li>
         	<li class="logout"><a href="../../index.jsp">Logout</a></li>
       	</ul>
 	</div>
