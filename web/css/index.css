@@ -1,0 +1,96 @@
+body {
+	background-color: #ffffff !important;
+	/*background: url('../img/bg.jpg');*/
+	background-position: right bottom;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+}
+
+a {
+	color: #848484 !important;
+}
+
+a:hover {
+	color: #FFD934 !important;
+	text-decoration: none !important;
+}
+
+/******************** INDEX Style ********************/
+.outer {
+    display: table;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.middle {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.inner {
+	text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 25px 20px;
+    background-color: rgba(232, 232, 232, 0.8) !important;
+}
+
+.pharmaContent {
+	text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.indexLogo img {
+	width: 100%;
+}
+
+.login {
+	margin: auto;
+	padding-top: 20px;
+}
+
+.indexFooter {
+	padding-top: 50px;
+	color: #585858;
+}
+
+
+
+/******************** Button ********************/
+
+.btn:focus, .btn:active {
+	border-color: #F6C533 !important;
+}
+
+.btn-yellow {
+	font-size: 16px !important;
+	color: #282828 !important;
+    background: rgb(255, 217, 52) !important;
+    border-color: #F6C533 !important;
+    -webkit-transition: all 0.2s ease-in-out; 
+	transition: all 0.2s ease-in-out;
+	width: 180px;
+}
+
+.btn-yellow:hover {
+	color: #282828 !important;
+    background: rgb(248, 193, 26) !important;
+    border-color: #F6C533;
+	-webkit-transition: all 0.2s ease-in-out; 
+	transition: all 0.2s ease-in-out;
+}
+
+
+/******************** Alerts ********************/
+
+.row {
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+}
+
+.alert {
+	margin-bottom: 0px !important;
+	text-align: center;
+}
