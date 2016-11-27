@@ -43,12 +43,11 @@
 						<tbody>
 							<tr>
 								<td>001</td>
-								<td>Decolgen</td>
-								<td>10</td>
-								<td>12/12/12</td>
-								<td>10:00 pm</td>
-								<td>12:00 pm</td>
-								<td>Php 100.00</td>
+								<td>sdfg</td>
+								<td>091777777722</td>
+								<td>911</td>
+								<td>payatas</td>
+								<td>courier</td>
 							</tr>
 						</tbody>
 					</table>

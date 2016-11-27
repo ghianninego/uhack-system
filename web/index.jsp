@@ -23,7 +23,7 @@
 					<!-- System Title -->
 					<div class="row">
 						<div class="col-lg-8 col-lg-offset-2 col-sm-12 indexLogo">
-							<img src="img/LOGO.png" alt="Universal Hospital Archive Card">
+							<img src="img/UHC.png" alt="Universal Hospital Archive Card">
 						</div>
 					</div>
 					<!-- End of System Title -->
