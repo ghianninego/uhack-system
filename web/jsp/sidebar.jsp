@@ -30,6 +30,7 @@
         <!-- } else { -->
         	<li><a href="adminProfile.jsp">Profile</a></li>
         	<li><a href="adminTransactions.jsp">All Transactions</a></li>
+        	<li><a href="adminTrackOrders.jsp">Track Incoming Orders</a></li>
         	<li><a href="adminUsers.jsp">All Users</a></li>
         <!-- } -->
         
