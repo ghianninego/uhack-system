@@ -30,7 +30,7 @@
 			<div class="inprofile">
 				<h4>Add Medicines</h4>
 				<div class="controls">
-				<form role="form" autocomplete="off">
+				<form role="form" autocomplete="off">            	
                     <div class="entry input-group">
                     	<div class="col-sm-8">
                         	<select class="form-control" name="fields[]">
@@ -50,7 +50,7 @@
                     </div>
                     <div class="someButton">
                     	<br>
-                    	<button type="submit" class="btn btn-default">Submit</button>
+                    	<button type="submit" class="btn btn-default">Next</button>
                     </div>
                 </form>
 				</div>
