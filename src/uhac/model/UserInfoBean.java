@@ -2,6 +2,7 @@ package uhac.model;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import uhac.beanHelper.BeanInterface;
@@ -81,6 +82,7 @@ public class UserInfoBean  implements BeanInterface{
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	
 	public String getCellphoneNumber() {
 		return cellphoneNumber;
 	}
@@ -190,7 +192,7 @@ public class UserInfoBean  implements BeanInterface{
 		PreparedStatement ps = SQLOperations.SelectUser(connection);
 		ResultSet rs;
 		try {
-			ps.setInt(1, getID());
+			ps.setInt(1, getEmail());
 			rs = ps.executeQuery();
 			if (rs != null) {
 				return rs;
@@ -227,5 +229,38 @@ public class UserInfoBean  implements BeanInterface{
 		}
 		
 		return 0;
+	}
+	
+	public UserInfoBean checkIfValidUser(Connection connection) {
+		PreparedStatement ps = SQLOperations.validateUser(connection);
+		ResultSet rs;
+		try
+		{
+			ps.setString(1, getEmail());
+			ps.setString(2, getUserPassword());
+			rs = ps.executeQuery();
+			if (rs.next())
+			{
+				UserInfoBean user = (UserInfoBean) BeanFactory.getUserBean(
+						 rs.getInt(1), 
+						 rs.getString(2), 
+						 rs.getString(3), 
+						 rs.getString(4), 
+						 rs.getString(5), 
+						 rs.getString(6), 
+						 rs.getString(7), 
+						 rs.getString(8), 
+						 rs.getString(9), 
+						 rs.getInt(10), 
+						 rs.getString(11));
+				return user;
+			}
+		}
+		catch(SQLException e)
+		{
+			e.printStackTrace();
+		}
+		
+		return null;
 	}
 }

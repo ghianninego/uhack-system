@@ -14,6 +14,7 @@ public class UserClass {
 		 String firstName = request.getParameter("firstName");
 		 String middleName = request.getParameter("middleName");
 		 String lastName = request.getParameter("lastName");
+		 String address = request.getParameter("address");
 		 String userPassword = request.getParameter("userPassword");
 		 String email = request.getParameter("email");
 		 String cellphoneNumber = request.getParameter("cellphoneNumber");
@@ -26,6 +27,7 @@ public class UserClass {
 				 firstName, 
 				 middleName, 
 				 lastName, 
+				 address,
 				 userPassword, 
 				 email, 
 				 cellphoneNumber, 
@@ -40,7 +42,7 @@ public class UserClass {
 		 return new UserInfoBean().deleteAllUsers(connection);
 	}
 	
-	static int addUser(HttpServletRequest request,Connection connection){
+	static int deleteUser(HttpServletRequest request,Connection connection){
 		 int ID = Integer.parseInt(request.getParameter("ID"));
 		
 		 UserInfoBean user = new UserInfoBean();
@@ -54,10 +56,10 @@ public class UserClass {
 	}
 	
 	static ResultSet getUser(HttpServletRequest request,Connection connection){
-		 int ID = Integer.parseInt(request.getParameter("ID"));
+		 String email = Integer.parseInt(request.getParameter("email"));
 		
 		 UserInfoBean user = new UserInfoBean();
-		 user.setID(ID);
+		 user.setEmail(email);
 
 		 return user.getUser(connection);
 	}

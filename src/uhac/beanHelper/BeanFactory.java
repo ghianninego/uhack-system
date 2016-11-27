@@ -8,7 +8,7 @@ public class BeanFactory {
 
 
 	public static BeanInterface getUserBean(
-	int _ID ,String _firstName ,String _middleName , String _lastName ,
+	int _ID ,String _firstName ,String _middleName , String _lastName , String _address,
 	String _userPassword , String _email, String _cellphoneNumber,
 	String _telephoneNumber, int _role , String _birthDay
 			)
@@ -18,6 +18,7 @@ public class BeanFactory {
 		user.setFirstName(_firstName);
 		user.setMiddleName(_middleName);
 		user.setLastName(_lastName);
+		user.setAddress(_address);
 		user.setUserPassword(_userPassword);
 		user.setEmail(_email);
 		user.setCellphoneNumber(_cellphoneNumber);
