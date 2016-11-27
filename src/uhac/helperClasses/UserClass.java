@@ -88,6 +88,17 @@ public class UserClass {
 
 		 return user.updateDatabase(connection);
 	}
+	
+	public UserInfoBean getLogin(Connection connection) {
+		String userPassword = request.getParameter("userPassword");
+		String email = request.getParameter("email");
+		
+		UserInfoBean user = new UserInfoBean();
+		user.setUserPassword(userPassword);
+		user.setEmail(email);
+		
+		return user.checkIfValidUser(connection);
+	}
 	//pa add delete, update,select user
 	
 }

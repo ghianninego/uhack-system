@@ -260,7 +260,7 @@ public class UserInfoBean  implements BeanInterface{
 		{
 			e.printStackTrace();
 		}
-		
+		 
 		return null;
 	}
 }
