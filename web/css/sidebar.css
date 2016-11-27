@@ -130,6 +130,20 @@
 	transition: all 0.2s ease-in-out;
 }
 
+.logo #logo-image {
+	position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("../img/UHC.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: 0 auto;
+    background-position: center;
+    
+}
+
 .profile {
 	text-align: center;
 	padding: 5px;

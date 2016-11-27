@@ -13,8 +13,12 @@
     
     <div class="navbar-collapse collapse sidebar-navbar-collapse">
     	<ul class="nav navbar-nav">
-        	<li class="hidden-xs navbar-brand" style="color: #2980B9">Universal Health Couriers
-        	</li>
+        	<!--<li class="hidden-xs navbar-brand" style="color: #2980B9">Universal Health Couriers
+        	</li>-->
+        	<li class="logo" style="height: 150px;">
+        		<div id="logo-image" style="height: 150px; margin:0 auto;">
+				</div>
+			</li>
         	<li class="profile">
         		<img src="../../img/happy.png" alt="profile picture"/>
         		<p>Username</p>
