@@ -23,7 +23,7 @@
 					<!-- System Title -->
 					<div class="row">
 						<div class="col-lg-8 col-lg-offset-2 col-sm-12 indexLogo">
-							<img src="img/UHC.png" alt="Universal Hospital Archive Card">
+							<img src="img/LOGO.png" alt="Universal Hospital Archive Card">
 						</div>
 					</div>
 					<!-- End of System Title -->
@@ -31,13 +31,13 @@
 					<!-- Login Form-->
 					<div class="row">
 						<div class="col-sm-6 col-sm-offset-3 col-xs-12 col-xs-offset-0">
-							<form class="form login" action="jsp/customer/customerProfile.jsp">
+							<form class="form login" action="dbcontrol" method="post">
 								<input type="hidden" value="login" name="requestType">
 								<div class="form-group">
-									<input type="text" class="form-control" id="username" name="username" required="required" placeholder="Username">
+									<input type="text" class="form-control" id="username" name="email" required="required" placeholder="Username">
 								</div>
 								<div class="form-group">
-									<input type="password" class="form-control" id="password" name="password" required="required" placeholder="Password">
+									<input type="password" class="form-control" id="password" name="userPassword" required="required" placeholder="Password">
 								</div>
 								<button type="submit" class="btn btn-yellow">Login</button>
 							</form>

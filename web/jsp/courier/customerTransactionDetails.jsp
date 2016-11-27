@@ -13,7 +13,7 @@
 		<script src="../../js/jquery.js"></script>
 		<script src="../../js/bootstrap.min.js"></script>
 		
-		<title>Universal Hospital Archive Card - Profile</title>
+		<title>Universal Health Courier - New Transaction: Details</title>
 	</head>
 	
 	<body>
@@ -24,19 +24,19 @@
 		<!-- Content -->
 		<div class="content">
 			<div class="moduleTitle">
-				<h1>PROFILE</h1>
+				<h1>New Transaction: Details</h1>
 			</div>
 			<div class="inprofile">
-				<h4>Name</h4>
-				<h4 id="space"><%=user.getFirstName() %> <%=user.getMiddleName() %><%=user.getLastName() %></h4>
-				<h4>Contact No.</h4>
-				<h4 id="space"><%=user.getCellphoneNumber()%></h4>
-				<h4>Tel. No.:</h4>
-				<h4 id="space"><%=user.getTelephoneNumber()%></h4>
-				<h4>Email</h4>
-				<h4 id="space"><%=user.getEmail() %></h4>
+				<h4>Track No.:</h4>
+				<h4 id="space">123</h4>
 				<h4>Address:</h4>
-				<h4 id="space"><%=user.getAddress() %></h4>
+				<h4 id="space">40 Molavve St., QC</h4>
+				<h4>Contact No.:</h4>
+				<h4 id="space">99999999</h4>
+				<h4>Medicine Details</h4>
+				<h4 id="space">asdasdasd</h4>
+				<h4>Courier:</h4>
+				<h4 id="space">Mr Potato</h4>
 			</div>
 		</div>
 		<!-- End of Content -->

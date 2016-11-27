@@ -36,20 +36,19 @@
 								<th>Contact #</th>
 								<th>Phone #</th>
 								<th>Address</th>
-								<th>Type</th>
 							</tr>
 						</thead>
-						
+						<%while(userALL.next()) {%>
 						<tbody>
 							<tr>
-								<td>001</td>
-								<td>sdfg</td>
-								<td>091777777722</td>
-								<td>911</td>
-								<td>payatas</td>
-								<td>courier</td>
+								<td><%=userALL.getString("userID") %></td>
+								<td><%=userALL.getString("firstName") %>   <%=userALL.getString("middleName") %>      <%=userALL.getString("lastName") %></td>
+								<td><%=userALL.getString("cellphoneNumber") %></td>
+								<td><%=userALL.getString("telephoneNumber") %></td>
+								<td><%=userALL.getString("address") %></td>\
 							</tr>
 						</tbody>
+						<%} %>
 					</table>
 				</div>
 			</div>

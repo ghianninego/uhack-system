@@ -29,6 +29,8 @@
 			<div class="tableContent">
 				<div class="table-responsive">
 					<table id="myTable" class="table table-striped table-bordered" cellspacing="0" width="100%">
+						<%int x =0;
+						while(records.next()){ %>
 						<thead>
 							<tr>
 								<th>Trk #</th>
@@ -40,14 +42,16 @@
 						
 						<tbody>
 							<tr>
-								<td>001</td>
-								<td>Gggggg</td>
+								<td><%=records.getInt("transactionID") %></td>
+								<td><%=records.getString("firstName") %><%=records.getString("middleName") %><%=records.getString("lastName") %></td>
 								<td>Delivered</td>
 								<td>
-									<button type="button" class="btn btn-link" data-toggle="modal" data-target="#infoModal" data-trxid="LOL">more info</button> | 
+									<button type="button" class="btn btn-link" data-toggle="modal" data-target="#infoModal<%=x %>" data-trxid="LOL">more info</button> | 
 									<button type="button" class="btn btn-link" data-toggle="modal" data-target="#statusModal">set status</button>
+								
 								</td>
 							</tr>
+						
 						</tbody>
 					</table>
 				</div>
@@ -57,7 +61,7 @@
 		
 		
 		<!-- INFO_MODAL -->
-		<div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
+		<div class="modal fade" id="infoModal<%=x %>>" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
 			<div class="modal-dialog modal-md" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
@@ -66,14 +70,20 @@
 					</div>
 					
 					<div class="modal-body">
-		            	<h5>Trk#: </h5>
-		            	<h5>Customer: </h5>
-		            	<h5>Medicine: </h5>
-		            	<h5>Quantity: </h5>
-		            	<h5>Date Ordered: </h5>
-		            	<h5>Time Ordered: </h5>
-		            	<h5>Type of Service</h5>
-		            	<h5>Total Amount (w/ service charge): </h5>
+		            	<h5>Trk#: <%=records.getString("transactionID") %></h5>
+		            	<h5>Customer: <%=records.getString("firstName") %> <%=records.getString("middleName") %> <%=records.getString("lastName") %></h5>
+		            	<h5>Medicine: <%=records.getString("medicineName") %></h5>
+		            	<h5>Quantity: <%=records.getString("quantity") %></h5>
+		            	<h5>Date Ordered: <%=records.getString("quantity") %></h5>
+		            	<h5>Time Ordered: <%=records.getString("orderTime") %></h5>
+		            	<h5>Type of Service <%if(records.getBoolean("enqueue")){
+		            		%>
+		            		EXPRESS
+		            		<%}else{%>
+		            		NOT EXPRESS
+			            		<%} %></h5>
+		            	
+		            	<h5>Total Amount (w/ service charge): <%=records.getString("deliveryCharge") %></h5>
 		            	<h5>Courier: </h5>
 		            	<h5>Status: </h5>
 		            </div>
@@ -84,7 +94,7 @@
 			</div>
 		</div>
 		<!-- INFO_MODAL -->
-		
+				<%} records.first();x=0;records.first();%>
 		<!-- SET_STATUS_MODAL -->
 		<div class="modal fade" id="statusModal" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
 			<div class="modal-dialog modal-md" role="document">

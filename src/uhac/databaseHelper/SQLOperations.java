@@ -197,7 +197,7 @@ public class SQLOperations {
 		try 
 		{
 			if (selectUser == null)
-				selectUser = connection.prepareStatement("SELECT * FROM UserInfoTable SET active=1)");
+				selectUser = connection.prepareStatement("SELECT * FROM UserInfoTable Where active=1");
 		} 
 		catch (SQLException e) 
 		{
@@ -257,6 +257,34 @@ public class SQLOperations {
 		return selectTransaction;
 	}
 	
+	
+	public synchronized static PreparedStatement SelectOneTransaction(Connection connection)
+	{
+		try 
+		{
+			if (selectTransaction== null)
+				selectTransaction = connection.prepareStatement("SELECT "
+						+ "TransactionTable.*, "
+						+ "PreTransactionTable.*, "
+						+ "UserInfoTable.* , "
+						+ "MedicineTable.* "
+						+ "FROM TransactionTable , PreTransactionTable , UserInfoTable, MedicineTable "
+						+ "WHERE UserInfoTable.active = 1 "
+						+ "and UserInfoTable.userID = PreTransactionTable.customerID "
+						+ "and TransactionTable.preTransactionID = PreTransactionTable.preTransactionID "
+						+ "and transactionTable.medicineID = medicineTable.medicineID "
+						+ "and UserInfoTable.userID = ?");
+		} 
+		catch (SQLException e) 
+		{
+			System.err.println("selectTransaction_ERR");
+			e.printStackTrace();
+		}
+		System.out.println("selectTransaction");         
+		return selectTransaction;
+	}
+	
+	
 	/***********************************************
 	 * ***************SELECT ONE*******************
 	 **********************************************/
@@ -281,7 +309,7 @@ public class SQLOperations {
 		try 
 		{
 			if (validateUser == null)
-				validate = connection.prepareStatement("SELECT * FROM UserInfoTable WHERE email=? AND password=? AND active =1)");
+				validateUser = connection.prepareStatement("SELECT * FROM UserInfoTable WHERE email=? AND userpassword=? AND active =1");
 		} 
 		catch (SQLException e) 
 		{

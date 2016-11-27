@@ -26,17 +26,17 @@
 			<div class="moduleTitle">
 				<h1>PROFILE</h1>
 			</div>
-			<div class="inprofile">
+		<div class="inprofile">
 				<h4>Name</h4>
-				<h4 id="space">Ghiannine Shiarra J. Go</h4>
+				<h4 id="space"><%=user.getFirstName() %> <%=user.getMiddleName() %><%=user.getLastName() %></h4>
 				<h4>Contact No.</h4>
-				<h4 id="space">99999999</h4>
+				<h4 id="space"><%=user.getCellphoneNumber()%></h4>
 				<h4>Tel. No.:</h4>
-				<h4 id="space">99999999</h4>
+				<h4 id="space"><%=user.getTelephoneNumber()%></h4>
 				<h4>Email</h4>
-				<h4 id="space">sdfg@gmail.com</h4>
+				<h4 id="space"><%=user.getEmail() %></h4>
 				<h4>Address:</h4>
-				<h4 id="space">99999999</h4>
+				<h4 id="space"><%=user.getAddress() %></h4>
 			</div>
 		</div>
 		<!-- End of Content -->

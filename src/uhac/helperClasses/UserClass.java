@@ -1,6 +1,7 @@
 package uhac.helperClasses;
 
 import java.sql.Connection;
+import java.sql.ResultSet;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -9,7 +10,7 @@ import uhac.model.UserInfoBean;
 
 public class UserClass {
 
-	static int addUser(HttpServletRequest request,Connection connection){
+	public static int addUser(HttpServletRequest request,Connection connection){
 		 int ID = Integer.parseInt(request.getParameter("ID"));
 		 String firstName = request.getParameter("firstName");
 		 String middleName = request.getParameter("middleName");
@@ -38,11 +39,11 @@ public class UserClass {
 		 return user.storeToDatabase(connection);
 	}
 	
-	static int deleteUsers(HttpServletRequest request,Connection connection){
+	public static int deleteUsers(HttpServletRequest request,Connection connection){
 		 return new UserInfoBean().deleteAllUsers(connection);
 	}
 	
-	static int deleteUser(HttpServletRequest request,Connection connection){
+	public static int deleteUser(HttpServletRequest request,Connection connection){
 		 int ID = Integer.parseInt(request.getParameter("ID"));
 		
 		 UserInfoBean user = new UserInfoBean();
@@ -51,12 +52,12 @@ public class UserClass {
 		 return user.deleteUser(connection);
 	}
 	
-	static ResultSet getUsers(HttpServletRequest request,Connection connection) {
+	public static ResultSet getUsers(HttpServletRequest request,Connection connection) {
 		return new UserInfoBean().getUsers(connection);
 	}
 	
-	static ResultSet getUser(HttpServletRequest request,Connection connection){
-		 String email = Integer.parseInt(request.getParameter("email"));
+	public static ResultSet getUser(HttpServletRequest request,Connection connection){
+		 String email = request.getParameter("email");
 		
 		 UserInfoBean user = new UserInfoBean();
 		 user.setEmail(email);
@@ -64,11 +65,12 @@ public class UserClass {
 		 return user.getUser(connection);
 	}
 	
-	static int addUser(HttpServletRequest request,Connection connection){
+	public static int updateUser(HttpServletRequest request,Connection connection){
 		 int ID = Integer.parseInt(request.getParameter("ID"));
 		 String firstName = request.getParameter("firstName");
 		 String middleName = request.getParameter("middleName");
 		 String lastName = request.getParameter("lastName");
+		 String address = request.getParameter("address");
 		 String userPassword = request.getParameter("userPassword");
 		 String email = request.getParameter("email");
 		 String cellphoneNumber = request.getParameter("cellphoneNumber");
@@ -78,7 +80,8 @@ public class UserClass {
 				 ID, 
 				 firstName, 
 				 middleName, 
-				 lastName, 
+				 lastName,
+				 address,
 				 userPassword, 
 				 email, 
 				 cellphoneNumber, 
@@ -89,7 +92,7 @@ public class UserClass {
 		 return user.updateDatabase(connection);
 	}
 	
-	public UserInfoBean getLogin(Connection connection) {
+	public static UserInfoBean getLogin(HttpServletRequest request, Connection connection) {
 		String userPassword = request.getParameter("userPassword");
 		String email = request.getParameter("email");
 		

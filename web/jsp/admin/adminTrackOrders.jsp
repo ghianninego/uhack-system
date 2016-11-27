@@ -62,14 +62,14 @@
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title" id="gridSystemModalLabel">Assign A Courier</h4>
+						<h4 class="modal-title" id="gridSystemModalLabel">Assign Courier</h4>
 					</div>
 				<form class="form-horizontal" action="" method="post">
             		<div class="modal-body">
             
-            			<!-- Name -->
+            			<!-- Height -->
             			<div class="form-group">
-            				<label for="Name" class="col-sm-3 control-label">Courier Name</label>
+            				<label for="Height" class="col-sm-3 control-label">Height</label>
             				<div class="col-sm-5">
             					<select class="form-control" id="assign" name="assign">
             						<option value="1">wapakels</option>
@@ -98,10 +98,24 @@
 					</div>
 				<form class="form-horizontal" action="" method="post">
 		            <div class="modal-body">
-		            		<button type="submit" class="btn btn-default pull-left">Yes</button>
-		            		<button type="button" class="btn btn-gray pull-left" data-dismiss="modal">Cancel</button>
-		            	<br><br>
+		            
+		            	<!-- cancel -->
+		            	<div class="form-group">
+		            		<div class="col-sm-5">
+		            			<select class="form-control" name="status" id="status">
+		            				<option value="yes">Yes</option>
+		            				<option value="no">Cancel</option>
+		            			</select>
+		            		</div>
+		            	</div>
+		            	
 		            </div>
+		            <div class="modal-footer">
+						<!-- <text type="hidden" name="seminarID" value="${bean.seminarID}" -->
+		            	<button type="submit" class="btn btn-default pull-left">Submit</button>
+		            	<button type="button" class="btn btn-gray pull-left" data-dismiss="modal">Cancel</button>
+		            </div>
+		            <input type="hidden" name="requestType" value="createSeminar" />
 		        </div>
 				</form>
 			</div>

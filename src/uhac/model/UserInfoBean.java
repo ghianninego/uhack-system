@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import uhac.beanHelper.BeanFactory;
 import uhac.beanHelper.BeanInterface;
 import uhac.databaseHelper.SQLOperations;
 
@@ -192,7 +193,7 @@ public class UserInfoBean  implements BeanInterface{
 		PreparedStatement ps = SQLOperations.SelectUser(connection);
 		ResultSet rs;
 		try {
-			ps.setInt(1, getEmail());
+			ps.setString(1, getEmail());
 			rs = ps.executeQuery();
 			if (rs != null) {
 				return rs;
@@ -238,6 +239,7 @@ public class UserInfoBean  implements BeanInterface{
 		{
 			ps.setString(1, getEmail());
 			ps.setString(2, getUserPassword());
+			System.out.println(ps);
 			rs = ps.executeQuery();
 			if (rs.next())
 			{

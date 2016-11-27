@@ -30,13 +30,13 @@
 			<div class="inprofile">
 				<h4>Add Medicines</h4>
 				<div class="controls">
-				<form role="form" autocomplete="off">            	
+				<form role="form" autocomplete="off">
                     <div class="entry input-group">
                     	<div class="col-sm-8">
                         	<select class="form-control" name="fields[]">
-                        		<option value="">ajdad</option>
-                        		<option value="">ajdad</option>
-                        		<option value="">ajdad</option>
+                        		<%while(medicineALL.next()){ %>
+                        		<option value=""><%=medicineALL.getString("medicineName") %>  <%=medicineALL.getString("medicineBrand") %></option>
+                        		<%} medicineALL.first();%>
                         	</select>
                         </div>
                         <div class="col-sm-3">
@@ -50,7 +50,7 @@
                     </div>
                     <div class="someButton">
                     	<br>
-                    	<button type="submit" class="btn btn-default">Next</button>
+                    	<button type="submit" class="btn btn-default">Submit</button>
                     </div>
                 </form>
 				</div>

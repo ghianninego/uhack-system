@@ -36,22 +36,21 @@
 								<th>Qty</th>
 								<th>Date Ordered</th>
 								<th>Time Ordered</th>
-								<th>Time Delivered</th>
 								<th>Total Amount (w/ service charge)</th>
 							</tr>
 						</thead>
-						
+						<%while(records.next()){ %>
 						<tbody>
 							<tr>
-								<td>001</td>
-								<td>Decolgen</td>
-								<td>10</td>
-								<td>12/12/12</td>
-								<td>10:00 pm</td>
-								<td>12:00 pm</td>
-								<td>Php 100.00</td>
+								<td><%=records.getString("transactionID") %></td>
+								<td><%=records.getString("MedicineName") %></td>
+								<td><%=records.getString("quantity") %></td>
+								<td><%=records.getString("dateOrder") %></td>
+								<td><%=records.getString("orderTime") %></td>
+								<td><%=records.getString("deliveryCharge") %></td>
 							</tr>
 						</tbody>
+						<%}records.first();%>
 					</table>
 				</div>
 			</div>
