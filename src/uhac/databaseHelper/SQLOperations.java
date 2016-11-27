@@ -12,6 +12,7 @@ public class SQLOperations {
 	
 	//----------------------------------------------------
 	private static PreparedStatement deleteUser;
+	private static PreparedStatement deleteOneUser;
 	private static PreparedStatement deleteMedicine;
 	private static PreparedStatement deletePreTransaction;
 	private static PreparedStatement deleteTransaction;
@@ -24,6 +25,7 @@ public class SQLOperations {
 	
 	//---------------------------------------------------
 	private static PreparedStatement selectOneUser;
+	private static PreparedStatement validateUser;
 	private static PreparedStatement selectOneMedicine;
 	private static PreparedStatement selectOnePreTransaction;
 	private static PreparedStatement selectOneTransaction;
@@ -40,7 +42,7 @@ public class SQLOperations {
 		try 
 		{
 			if (addNewUser == null)
-				addNewUser = connection.prepareStatement("INSERT INTO UserInfoTable VALUES (null,?,?,?,?,?,?,?,?,?,?)");
+				addNewUser = connection.prepareStatement("INSERT INTO UserInfoTable VALUES (null,?,?,?,?,?,?,?,?,?,?,?)");
 		} 
 		catch (SQLException e) 
 		{
@@ -111,6 +113,22 @@ public class SQLOperations {
 		{
 			if (deleteUser == null)
 				deleteUser = connection.prepareStatement("UPDATE UserInfoTable SET active=0)");
+		} 
+		catch (SQLException e) 
+		{
+			System.err.println("deleteUser_ERR");
+			e.printStackTrace();
+		}
+		System.out.println("deleteUser");         
+		return deleteUser;
+	}
+	
+	public synchronized static PreparedStatement DeleteOneUser(Connection connection)
+	{
+		try 
+		{
+			if (deleteUser == null)
+				deleteUser = connection.prepareStatement("UPDATE UserInfoTable SET active=0 WHERE userID = ?)");
 		} 
 		catch (SQLException e) 
 		{
@@ -248,7 +266,7 @@ public class SQLOperations {
 		try 
 		{
 			if (selectOneUser == null)
-				selectOneUser = connection.prepareStatement("SELECT * FROM UserInfoTable WHERE userID=? AND active =1)");
+				selectOneUser = connection.prepareStatement("SELECT * FROM UserInfoTable WHERE email=? AND active =1)");
 		} 
 		catch (SQLException e) 
 		{
@@ -257,6 +275,21 @@ public class SQLOperations {
 		}
 		System.out.println("selectOneUser");         
 		return selectOneUser;
+	}
+	
+	public synchronized static PreparedStatement validateUser(Connection connection) {
+		try 
+		{
+			if (validateUser == null)
+				validate = connection.prepareStatement("SELECT * FROM UserInfoTable WHERE email=? AND password=? AND active =1)");
+		} 
+		catch (SQLException e) 
+		{
+			System.err.println("validateUser_ERR");
+			e.printStackTrace();
+		}
+		System.out.println("validateUser");         
+		return validateUser;
 	}
 	
 	public synchronized static PreparedStatement SelectOnePreTransaction(Connection connection)
