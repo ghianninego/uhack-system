@@ -13,7 +13,7 @@
     
     <div class="navbar-collapse collapse sidebar-navbar-collapse">
     	<ul class="nav navbar-nav">
-        	<li class="hidden-xs navbar-brand">UHAC
+        	<li class="hidden-xs navbar-brand" style="color: #2980B9">Universal Health Couriers
         	</li>
         	<li class="profile">
         		<img src="../../img/happy.png" alt="profile picture"/>
