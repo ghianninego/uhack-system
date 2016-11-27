@@ -12,6 +12,7 @@ public class SQLOperations {
 	
 	//----------------------------------------------------
 	private static PreparedStatement deleteUser;
+	private static PreparedStatement deleteOneUser;
 	private static PreparedStatement deleteMedicine;
 	private static PreparedStatement deletePreTransaction;
 	private static PreparedStatement deleteTransaction;
@@ -40,7 +41,7 @@ public class SQLOperations {
 		try 
 		{
 			if (addNewUser == null)
-				addNewUser = connection.prepareStatement("INSERT INTO UserInfoTable VALUES (null,?,?,?,?,?,?,?,?,?,?)");
+				addNewUser = connection.prepareStatement("INSERT INTO UserInfoTable VALUES (null,?,?,?,?,?,?,?,?,?,?,?)");
 		} 
 		catch (SQLException e) 
 		{
@@ -111,6 +112,22 @@ public class SQLOperations {
 		{
 			if (deleteUser == null)
 				deleteUser = connection.prepareStatement("UPDATE UserInfoTable SET active=0)");
+		} 
+		catch (SQLException e) 
+		{
+			System.err.println("deleteUser_ERR");
+			e.printStackTrace();
+		}
+		System.out.println("deleteUser");         
+		return deleteUser;
+	}
+	
+	public synchronized static PreparedStatement DeleteOneUser(Connection connection)
+	{
+		try 
+		{
+			if (deleteUser == null)
+				deleteUser = connection.prepareStatement("UPDATE UserInfoTable SET active=0 WHERE userID = ?)");
 		} 
 		catch (SQLException e) 
 		{

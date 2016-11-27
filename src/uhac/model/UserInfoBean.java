@@ -12,6 +12,7 @@ public class UserInfoBean  implements BeanInterface{
 	private String firstName;
 	private String middleName;
 	private String lastName;
+	private String address;
 	private String userPassword;
 	private String email;
 	private String cellphoneNumber;
@@ -59,6 +60,14 @@ public class UserInfoBean  implements BeanInterface{
 	
 	public String getUserPassword() {
 		return userPassword;
+	}
+	
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	
+	public String getAddress() {
+		return address;
 	}
 	
 	public void setUserPassword(String userPassword) {
@@ -112,13 +121,14 @@ public class UserInfoBean  implements BeanInterface{
 			ps.setString(1, getFirstName());
 			ps.setString(2, getMiddleName());
 			ps.setString(3, getLastName());
-			ps.setString(4, getUserPassword());
-			ps.setString(5, getEmail());
-			ps.setString(6, getCellphoneNumber());
-			ps.setString(7, getTelephoneNumber());
-			ps.setInt(8, getRole());
-			ps.setString(9, getBirthDay());
-			ps.setBoolean(10, true);
+			ps.setString(4, getAddress());
+			ps.setString(5, getUserPassword());
+			ps.setString(6, getEmail());
+			ps.setString(7, getCellphoneNumber());
+			ps.setString(8, getTelephoneNumber());
+			ps.setInt(9, getRole());
+			ps.setString(10, getBirthDay());
+			ps.setBoolean(11, true);
 			if (ps.executeUpdate() > 0)
 			{
 				connection.commit();
@@ -132,5 +142,90 @@ public class UserInfoBean  implements BeanInterface{
 		return 0;
 	}
 	
+	public int deleteAllUsers(Connection connection) {
+		PreparedStatement ps = SQLOperations.DeleteUser(connection);
+		try {
+			if (ps.executeUpdate() > 0) {
+				connection.commit();
+				return 1;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return 0;
+	}
 	
+	public int deleteUser(Connection connection) {
+		PreparedStatement ps = SQLOperations.DeleteOneUser(connection);
+		try {
+			ps.setInt(1, getID());
+			if (ps.executeUpdate() > 0) {
+				connection.commit();
+				return 1;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return 0;
+	}
+	
+	public ResultSet getUsers(Connection connection) {
+		PreparedStatement ps = SQLOperations.SelectUser(connection);
+		ResultSet rs;
+		try {
+			rs = ps.executeQuery();
+			if (rs != null) {
+				return rs;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return null;
+	}
+	
+	public ResultSet getUser(Connection connection) {
+		PreparedStatement ps = SQLOperations.SelectUser(connection);
+		ResultSet rs;
+		try {
+			ps.setInt(1, getID());
+			rs = ps.executeQuery();
+			if (rs != null) {
+				return rs;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return null;
+	}
+	
+	public int updateDatabase(Connection connection) {
+		PreparedStatement ps = SQLOperations.updateUser(connection);
+		try
+		{
+			ps.setString(1, getFirstName());
+			ps.setString(2, getMiddleName());
+			ps.setString(3, getLastName());
+			ps.setString(4, getAddress());
+			ps.setString(5, getUserPassword());
+			ps.setString(6, getEmail());
+			ps.setString(7, getCellphoneNumber());
+			ps.setString(8, getTelephoneNumber());
+			ps.setBoolean(9, true);
+			if (ps.executeUpdate() > 0)
+			{
+				connection.commit();
+				return 1;
+			}
+		}
+		catch(SQLException e)
+		{
+			e.printStackTrace();
+		}
+		
+		return 0;
+	}
 }
