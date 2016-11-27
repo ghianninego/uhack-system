@@ -19,8 +19,17 @@
     
     <div class="navbar-collapse collapse sidebar-navbar-collapse">
     	<ul class="nav navbar-nav">
+<<<<<<< HEAD
         	<li class="hidden-xs navbar-brand">UHAC
         	</li>
+=======
+        	<!--<li class="hidden-xs navbar-brand" style="color: #2980B9">Universal Health Couriers
+        	</li>-->
+        	<li class="logo" style="height: 150px;">
+        		<div id="logo-image" style="height: 150px; margin:0 auto;">
+				</div>
+			</li>
+>>>>>>> 2dcb73b6f035609f2dfdc412ac039db1e1c3b67f
         	<li class="profile">
         		<img src="../../img/happy.png" alt="profile picture"/>
         		<p><%=user.getFirstName() %> <%=user.getMiddleName() %><%=user.getLastName() %></p>
